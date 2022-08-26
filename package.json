@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "lint": "eslint './src/**/*.{ts,tsx}' --fix && prettier . -w"
   },
   "dependencies": {
     "next": "^12.2.5",
@@ -14,6 +15,10 @@
   "devDependencies": {
     "@types/node": "^18.7.13",
     "@types/react": "^18.0.17",
+    "@ux/config": "^3.0.4",
+    "@ux/eslint-config": "^5.7.2",
+    "eslint": "^8.22.0",
+    "prettier": "^2.7.1",
     "typescript": "^4.8.2"
   }
 }
