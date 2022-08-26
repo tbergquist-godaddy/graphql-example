@@ -4,15 +4,24 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
-    "lint": "eslint './src/**/*.{ts,tsx}' --fix && prettier . -w"
+    "start:dev": "next",
+    "lint": "eslint './src/**/*.{ts,tsx}' --fix && prettier . -w",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@adeira/graphql-global-id": "^2.1.0",
+    "apollo-server-micro": "^3.10.2",
+    "cors": "^2.8.5",
+    "graphql": "^16.6.0",
+    "micro": "^9.4.1",
     "next": "^12.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/adeira__graphql-global-id": "^2.1.0",
+    "@types/cors": "^2.8.12",
+    "@types/graphql": "^14.5.0",
     "@types/node": "^18.7.13",
     "@types/react": "^18.0.17",
     "@ux/config": "^3.0.4",
