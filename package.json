@@ -10,13 +10,15 @@
   },
   "dependencies": {
     "@adeira/graphql-global-id": "^2.1.0",
+    "@ux/js": "^1.0.9",
     "apollo-server-micro": "^3.10.2",
     "cors": "^2.8.5",
     "graphql": "^16.6.0",
     "micro": "^9.4.1",
     "next": "^12.2.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/adeira__graphql-global-id": "^2.1.0",

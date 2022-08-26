@@ -1,10 +1,31 @@
+import { invariant } from '@ux/js';
+import { v4 } from 'uuid';
+
 import Account from '../types/output/Account';
+
+const { ACCOUNT_API, AUTH_IDP } = process.env;
+
+invariant(ACCOUNT_API != null, 'Expected ACCOUNT_API to be set, but it was not');
+invariant(AUTH_IDP != null, 'Expected AUTH_IDP to be set, but it was not');
 
 export default {
   type: Account,
-  resolve: (/* _: unknown, args: unknown */) => {
+  resolve: async () => {
+    const res = await fetch(`${ACCOUNT_API}/accounts/v1/accounts/my`, {
+      headers: {
+        // this should never be done in prod, this should come from
+        // the request
+        'Authorization': `sso-jwt ${AUTH_IDP}`,
+        'x-ray-id': v4(),
+      },
+    });
+    const { customerId, firstName, lastName, telephone } = await res.json();
+
     return {
-      id: '1',
+      id: customerId,
+      firstName,
+      lastName,
+      telephone,
     };
   },
 };
