@@ -9,4 +9,7 @@ module.exports = {
   globals: {
     JSX: true,
   },
+  rules: {
+    'react/jsx-no-literals': 'off',
+  },
 };
