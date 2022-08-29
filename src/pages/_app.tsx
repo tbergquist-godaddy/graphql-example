@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { RelayEnvironmentProvider } from 'react-relay';
 
-import environment from '../modules/relay/Environment';
+import environment from '@/relay/Environment';
 
 export default function MyApp({ Component, pageProps }) {
   return (
