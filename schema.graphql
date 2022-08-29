@@ -1,0 +1,30 @@
+# @generated SignedSource<<7c8db7c88e4e1e551334fd695e5c6a35>>
+
+# <BREAKING-CHANGES-LOG>
+# </BREAKING-CHANGES-LOG>
+
+schema {
+  query: RootQuery
+}
+
+"""
+My account details
+"""
+type Account {
+  firstName: String
+
+  """
+  The globally unique ID of an object. You can unmask this ID to get original value but please note that this unmasked ID is not globally unique anymore and therefore it cannot be used as a cache key.
+  """
+  id(opaque: Boolean = true): ID!
+  lastName: String
+  name: String
+  telephone: String
+}
+
+"""
+Root Query
+"""
+type RootQuery {
+  account: Account
+}

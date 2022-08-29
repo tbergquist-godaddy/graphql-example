@@ -5,12 +5,12 @@ import Account from '../types/output/Account';
 
 const { ACCOUNT_API, AUTH_IDP } = process.env;
 
-invariant(ACCOUNT_API != null, 'Expected ACCOUNT_API to be set, but it was not');
-invariant(AUTH_IDP != null, 'Expected AUTH_IDP to be set, but it was not');
-
 export default {
   type: Account,
   resolve: async () => {
+    invariant(ACCOUNT_API != null, 'Expected ACCOUNT_API to be set, but it was not');
+    invariant(AUTH_IDP != null, 'Expected AUTH_IDP to be set, but it was not');
+
     const res = await fetch(`${ACCOUNT_API}/accounts/v1/accounts/my`, {
       headers: {
         // this should never be done in prod, this should come from
