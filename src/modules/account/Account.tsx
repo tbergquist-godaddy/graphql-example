@@ -1,5 +1,6 @@
 import { useLazyLoadQuery, graphql } from 'react-relay';
 import { AccountQuery as AccountsQueryType } from 'src/__generated__/AccountQuery.graphql';
+import { Container } from '@chakra-ui/react';
 
 import AccountsHeading from './components/AccountsHeading';
 
@@ -17,8 +18,8 @@ export default function Account(): JSX.Element {
     return <>{'loading...'}</>;
   }
   return (
-    <div>
+    <Container>
       <AccountsHeading dataRef={data.account} />
-    </div>
+    </Container>
   );
 }

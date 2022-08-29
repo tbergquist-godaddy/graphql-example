@@ -1,5 +1,6 @@
 import { useFragment, graphql } from 'react-relay';
 import { AccountsHeading$key } from 'src/__generated__/AccountsHeading.graphql';
+import { Heading } from '@chakra-ui/react';
 
 type Props = {
   dataRef: AccountsHeading$key;
@@ -15,5 +16,5 @@ export default function AccountsHeading({ dataRef }: Props): JSX.Element {
     dataRef,
   );
 
-  return <h1>{`Welcome back ${data?.firstName}`}</h1>;
+  return <Heading as="h1">{`Welcome back ${data?.firstName}`}</Heading>;
 }
