@@ -19,6 +19,13 @@
     "@adeira/js" "^2.1.1"
     "@babel/runtime" "^7.17.2"
 
+"@adeira/graphql-relay@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@adeira/graphql-relay/-/graphql-relay-0.3.0.tgz#7310ee3211c37b4f69f26298d0ed8a091b7b906b"
+  integrity sha512-WCFuFhXAUl9E/QgJrcoJhk0QbkA/O7evLWpaTQZ/oBG1gB4V9cYPNRTi3y9gCjoOoKHgYEd780tFnIwbHawGDg==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+
 "@adeira/js@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@adeira/js/-/js-2.1.1.tgz#7e871f0a881cd3e6de4acf351bcb5d940971d642"

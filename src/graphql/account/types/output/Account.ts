@@ -1,11 +1,11 @@
 import { GraphQLObjectType, GraphQLString } from 'graphql';
 import globalID from '@adeira/graphql-global-id';
 
-export default new GraphQLObjectType({
+const GraphQLAccount = new GraphQLObjectType({
   name: 'Account',
   description: 'My account details',
   fields: {
-    id: globalID(({ id }): string => id),
+    id: globalID(({ customerId }): string => customerId),
 
     name: {
       type: GraphQLString,
@@ -21,7 +21,8 @@ export default new GraphQLObjectType({
 
     telephone: {
       type: GraphQLString,
-      resolve: ({ telephone }): string => telephone,
     },
   },
 });
+
+export default GraphQLAccount;

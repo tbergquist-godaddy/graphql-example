@@ -1,15 +1,14 @@
-# @generated SignedSource<<7c8db7c88e4e1e551334fd695e5c6a35>>
+# @generated SignedSource<<02246f35c864eedd376711e798741df7>>
 
 # <BREAKING-CHANGES-LOG>
 # </BREAKING-CHANGES-LOG>
 
 schema {
   query: RootQuery
+  mutation: RootMutation
 }
 
-"""
-My account details
-"""
+"""My account details"""
 type Account {
   firstName: String
 
@@ -22,9 +21,36 @@ type Account {
   telephone: String
 }
 
-"""
-Root Query
-"""
+"""Interface to describe an error"""
+interface Error {
+  message: String
+}
+
+"""Root Mutation"""
+type RootMutation {
+  updateAccount(account: UpdateAccount!): UpdateAccountOrError
+}
+
+"""Root Query"""
 type RootQuery {
+  account: Account
+}
+
+"""Input type for updating an account"""
+input UpdateAccount {
+  firstName: String
+  lastName: String
+  telephone: String
+}
+
+"""Response type indicating an error"""
+type UpdateAccountError implements Error {
+  message: String
+}
+
+union UpdateAccountOrError = UpdateAccountError | UpdateAccountResponse
+
+"""The update account response"""
+type UpdateAccountResponse {
   account: Account
 }
