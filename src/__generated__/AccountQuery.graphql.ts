@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<aab950d0b02b73495c0b819541c726f6>>
+ * @generated SignedSource<<63866a0926fe387984569466d777b2ef>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -13,7 +13,7 @@ import { FragmentRefs } from "relay-runtime";
 export type AccountQuery$variables = {};
 export type AccountQuery$data = {
   readonly account: {
-    readonly " $fragmentSpreads": FragmentRefs<"AccountDetails" | "AccountsHeading">;
+    readonly " $fragmentSpreads": FragmentRefs<"AccountDetails" | "AccountsHeading" | "UpdateAccount">;
   } | null;
 };
 export type AccountQuery = {
@@ -45,6 +45,11 @@ const node: ConcreteRequest = {
             "args": null,
             "kind": "FragmentSpread",
             "name": "AccountDetails"
+          },
+          {
+            "args": null,
+            "kind": "FragmentSpread",
+            "name": "UpdateAccount"
           }
         ],
         "storageKey": null
@@ -101,15 +106,15 @@ const node: ConcreteRequest = {
     ]
   },
   "params": {
-    "cacheID": "8b67a5de2e61f245e821ed4193b96b24",
+    "cacheID": "38c87cf4a7cb28cdbd3c3769d1434841",
     "id": null,
     "metadata": {},
     "name": "AccountQuery",
     "operationKind": "query",
-    "text": "query AccountQuery {\n  account {\n    ...AccountsHeading\n    ...AccountDetails\n    id\n  }\n}\n\nfragment AccountDetails on Account {\n  firstName\n  lastName\n  telephone\n}\n\nfragment AccountsHeading on Account {\n  firstName\n}\n"
+    "text": "query AccountQuery {\n  account {\n    ...AccountsHeading\n    ...AccountDetails\n    ...UpdateAccount\n    id\n  }\n}\n\nfragment AccountDetails on Account {\n  firstName\n  lastName\n  telephone\n}\n\nfragment AccountsHeading on Account {\n  firstName\n}\n\nfragment UpdateAccount on Account {\n  firstName\n  lastName\n  telephone\n}\n"
   }
 };
 
-(node as any).hash = "69b845d4cc29bce8d0ac50d029845ca9";
+(node as any).hash = "96166051504d1d36d0027419410c90d4";
 
 export default node;

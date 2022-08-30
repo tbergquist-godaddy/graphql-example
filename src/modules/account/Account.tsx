@@ -5,12 +5,14 @@ import { Box, Container } from '@chakra-ui/react';
 import AccountsHeading from './components/AccountsHeading';
 
 import AccountDetails from '@/modules/account-details/AccountDetails';
+import UpdateAccount from '@/modules/update-account/UpdateAccount';
 
 const AccountQuery = graphql`
   query AccountQuery {
     account {
       ...AccountsHeading
       ...AccountDetails
+      ...UpdateAccount
     }
   }
 `;
@@ -21,10 +23,11 @@ export default function Account(): JSX.Element {
     return <>{'loading...'}</>;
   }
   return (
-    <Container>
+    <Container maxW="container.sm">
       <AccountsHeading dataRef={data.account} />
-      <Box mt={4}>
+      <Box mt={4} display="flex" justifyContent="space-between">
         <AccountDetails dataRef={data.account} />
+        <UpdateAccount dataRef={data.account} />
       </Box>
     </Container>
   );

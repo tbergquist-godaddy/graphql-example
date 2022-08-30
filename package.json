@@ -20,6 +20,7 @@
     "@ux/js": "^1.0.9",
     "apollo-server-micro": "^3.10.2",
     "cors": "^2.8.5",
+    "formik": "^2.2.9",
     "framer-motion": "^7.2.1",
     "graphql": "^16.6.0",
     "micro": "^9.4.1",

@@ -20,7 +20,7 @@ export default function AccountDetails({ dataRef }: Props): JSX.Element {
     dataRef,
   );
   return (
-    <>
+    <div>
       <Box mb={2}>
         <Heading size="md">{`Account details:`}</Heading>
       </Box>
@@ -29,6 +29,6 @@ export default function AccountDetails({ dataRef }: Props): JSX.Element {
         <ListItem title="Last name">{data?.lastName}</ListItem>
         <ListItem title="phone">{data?.telephone}</ListItem>
       </List>
-    </>
+    </div>
   );
 }
